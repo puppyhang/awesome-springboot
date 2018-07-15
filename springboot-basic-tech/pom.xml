@@ -34,6 +34,7 @@
         <finalName>${project.artifactId}-${project.version}</finalName>
 
         <plugins>
+            <!--https://github.com/spotify/dockerfile-maven-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
