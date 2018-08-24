@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ternence.springboot.docker.mapper.ContactsMapper">
+    <resultMap id="BaseResultMap" type="com.ternence.springboot.docker.entity.Contacts">
+        <id column="uuid" jdbcType="VARCHAR" property="uuid"/>
+        <result column="gender" jdbcType="CHAR" property="gender"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="phone_no" jdbcType="VARCHAR" property="phoneNo"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+    </resultMap>
+
+</mapper>

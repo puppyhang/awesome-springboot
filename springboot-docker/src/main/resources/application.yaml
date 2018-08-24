@@ -1,0 +1,15 @@
+#  app相关的配置
+server:
+  port: 8080
+
+#  spring相关的配置
+spring:
+  application:
+    name: springboot-docker
+  datasource:
+    url: jdbc:mysql://192.168.72.128:3306?useUnicode=true&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: tjhdmysqlmms800
+
+
