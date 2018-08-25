@@ -1,7 +1,7 @@
 package com.ternence.springboot.docker.service.impl;
 
 import com.ternence.springboot.docker.entity.Contacts;
-import com.ternence.springboot.docker.mapper.ContactsMapper;
+import com.ternence.springboot.docker.repository.ContactsRepository;
 import com.ternence.springboot.docker.service.DockerDemoService;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +15,12 @@ import java.util.List;
  */
 @Service
 public class DockerDemoServiceImpl implements DockerDemoService {
-
     @Resource
-    private ContactsMapper contactsMapper;
+    private ContactsRepository<Contacts> contactsRepository;
 
     @Override
     public List<Contacts> contacts(int page, int pageSize) {
-        return contactsMapper.selectAll();
+
+        return contactsRepository.selectAll();
     }
 }
