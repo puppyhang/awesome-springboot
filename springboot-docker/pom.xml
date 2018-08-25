@@ -70,6 +70,8 @@
     </dependencies>
 
     <build>
+        <finalName>springboot-docker-${version}</finalName>
+
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -152,7 +154,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <repository>spotify/foobar</repository>
+                        <repository>${project.build.finalName}</repository>
                         <tag>${project.version}</tag>
                         <buildArgs>
                             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
