@@ -5,12 +5,13 @@ import com.ternence.springboot.docker.mapper.ContactsMapper;
 import com.ternence.springboot.docker.repository.ContactsRepository;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
+ * 这里应该捕获所有的数据库操作异常,然后将其转化为可读的信息到日志中，不要让其返回到页面上
+ *
  * @author Ternence
  * @version 1.0
  * @since 2018/8/25 11:22
@@ -23,27 +24,27 @@ public class ContactsRepositoryImpl implements ContactsRepository<Contacts> {
 
     @Override
     public int deleteByPrimaryKey(Object key) {
-        return 0;
+        return contactsMapper.deleteByPrimaryKey(key);
     }
 
     @Override
     public int delete(Contacts record) {
-        return 0;
+        return contactsMapper.delete(record);
     }
 
     @Override
     public int insert(Contacts record) {
-        return 0;
+        return contactsMapper.insert(record);
     }
 
     @Override
     public int insertSelective(Contacts record) {
-        return 0;
+        return contactsMapper.insertSelective(record);
     }
 
     @Override
     public boolean existsWithPrimaryKey(Object key) {
-        return false;
+        return contactsMapper.existsWithPrimaryKey(key);
     }
 
     @Override
@@ -53,71 +54,71 @@ public class ContactsRepositoryImpl implements ContactsRepository<Contacts> {
 
     @Override
     public Contacts selectByPrimaryKey(Object key) {
-        return null;
+        return contactsMapper.selectByPrimaryKey(key);
     }
 
     @Override
     public int selectCount(Contacts record) {
-        return 0;
+        return contactsMapper.selectCount(record);
     }
 
     @Override
     public List<Contacts> select(Contacts record) {
-        return null;
+        return contactsMapper.select(record);
     }
 
     @Override
     public Contacts selectOne(Contacts record) {
-        return null;
+        return contactsMapper.selectOne(record);
     }
 
     @Override
     public int updateByPrimaryKey(Contacts record) {
-        return 0;
+        return contactsMapper.updateByPrimaryKey(record);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Contacts record) {
-        return 0;
+        return contactsMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int deleteByExample(Object example) {
-        return 0;
+        return contactsMapper.deleteByExample(example);
     }
 
     @Override
     public List<Contacts> selectByExample(Object example) {
-        return null;
+        return contactsMapper.selectByExample(example);
     }
 
     @Override
     public int selectCountByExample(Object example) {
-        return 0;
+        return contactsMapper.selectCountByExample(example);
     }
 
     @Override
     public Contacts selectOneByExample(Object example) {
-        return null;
+        return contactsMapper.selectOneByExample(example);
     }
 
     @Override
     public int updateByExample(Contacts record, Object example) {
-        return 0;
+        return contactsMapper.updateByExample(record, example);
     }
 
     @Override
     public int updateByExampleSelective(Contacts record, Object example) {
-        return 0;
+        return contactsMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public List<Contacts> selectByExampleAndRowBounds(Object example, RowBounds rowBounds) {
-        return null;
+        return contactsMapper.selectByExampleAndRowBounds(example, rowBounds);
     }
 
     @Override
     public List<Contacts> selectByRowBounds(Contacts record, RowBounds rowBounds) {
-        return null;
+        return contactsMapper.selectByRowBounds(record, rowBounds);
     }
 }

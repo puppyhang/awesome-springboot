@@ -1,11 +1,14 @@
 package com.ternence.springboot.docker.controller;
 
+import com.ternence.springboot.docker.api.BusinessApiStatusEnums;
+import com.ternence.springboot.docker.api.dto.FormativeResponseObject;
 import com.ternence.springboot.docker.service.DockerDemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author Ternence
@@ -25,8 +28,12 @@ public class DockerDemoController {
     }
 
     @GetMapping("/contacts")
-    public Object contacts() {
+    public FormativeResponseObject<List> contacts() {
 
-        return dockerDemoService.contacts(1, 15);
+        return FormativeResponseObject.builder(List.class)
+                .from(BusinessApiStatusEnums.GLOBAL_SUCCESS)
+                .data(dockerDemoService.contacts(1, 15))
+                .build();
+
     }
 }
