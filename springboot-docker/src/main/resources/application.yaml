@@ -7,9 +7,38 @@ spring:
   application:
     name: springboot-docker
   datasource:
-    url: jdbc:mysql://192.168.72.128:3306?useUnicode=true&useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: tjhdmysqlmms800
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.72.128:3306/test?useUnicode=true&characterEncoding=UTF-8?useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      db-type: mysql
+      initial-size: 10
+      min-idle: 5
+      max-active: 10
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      filters: stat,wall,slf4j
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
+      max-wait-thread-count: 200
+
+
+#  配置mybatis相关的参数
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.ternence.springboot.docker.entity
+
+#  配置通用mapper
+mapper:
+  not-empty: true
+  identity: MySQL
+
+
 
 

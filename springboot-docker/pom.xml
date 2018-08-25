@@ -39,14 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+        <!--spring boot 2 升级这个版本-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.6</version>
+            <version>1.1.10</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -58,10 +55,11 @@
             <artifactId>spring-boot-starter-swagger</artifactId>
             <version>1.2.0.RELEASE</version>
         </dependency>
+        <!--springboot 2.0 用的版本-->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>1.2.4</version>
+            <version>2.0.0</version>
         </dependency>
 
 

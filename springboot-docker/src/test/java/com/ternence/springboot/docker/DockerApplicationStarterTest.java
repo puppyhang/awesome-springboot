@@ -1,20 +1,20 @@
 package com.ternence.springboot.docker;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@ContextConfiguration(classes = {DockerApplicationStarter.class})
+public class DockerApplicationStarterTest {
 
-/**
- * Unit test for simple App.
- */
-public class DockerApplicationStarterTest
-{
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void shouldAnswerWithTrue() {
+        assertTrue(true);
     }
 }
