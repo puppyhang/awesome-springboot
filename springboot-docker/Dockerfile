@@ -5,8 +5,6 @@ VOLUME /tmp
 
 MAINTAINER taojianghang ternence.tao@foxmail.com
 
-COPY springboot-docker-1.0.jar /usr/local/bin
+ADD target/springboot-docker-1.0-SNAPSHOT.jar springboot-docker.jar
 
-ENV JAVA_OPTS = ""
-
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar /usr/local/bin/springboot-docker-1.0.jar" ]
+ENTRYPOINT [ "sh", "-c", "java -jar springboot-docker.jar" ]
